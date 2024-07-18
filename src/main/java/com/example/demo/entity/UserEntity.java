@@ -13,7 +13,6 @@ public class UserEntity {
     private Date hireDate;
     private Date fireDate;
 
-    // Getters and setters
     public int getId() {
         return id;
     }

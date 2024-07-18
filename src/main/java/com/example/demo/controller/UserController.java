@@ -1,10 +1,12 @@
 package com.example.demo.controller;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.example.demo.dto.UserDto;
 import com.example.demo.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -66,7 +68,7 @@ public class UserController {
 
         validateBirthDate(birthDate);
         validateHireDate(hireDate);
-        if (userDto.getFireDate() != null){
+        if (userDto.getFireDate() != null) {
             String FireDateString = DateUtil.DATE_FORMAT.format(userDto.getFireDate());
             LocalDate fireDate = LocalDate.parse(FireDateString, DateUtil.DATE_FORMATTER);
             validateFireDate(fireDate, hireDate);
@@ -84,7 +86,7 @@ public class UserController {
 
     }
 
-    private void validateName(String name){
+    private void validateName(String name) {
         if (!name.matches(regex)) {
             logger.warn("Try to add user with incorrect name: {}", name);
             throw new IllegalArgumentException("Name must be a letter of english or russian language");

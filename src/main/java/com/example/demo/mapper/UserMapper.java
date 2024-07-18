@@ -3,7 +3,6 @@ import org.springframework.stereotype.Component;
 import com.example.demo.dto.UserDto;
 import com.example.demo.entity.UserEntity;
 
-//FIXME: вынести в компонент @Component
 @Component
 public class UserMapper {
 

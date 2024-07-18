@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@ComponentScan(basePackages = "com.example.demo")
 public class UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;

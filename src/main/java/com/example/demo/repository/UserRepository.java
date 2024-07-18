@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-//package com.example.project.enums;
-
 
 @Repository
 public class UserRepository {
@@ -19,6 +17,7 @@ public class UserRepository {
 
     public List<UserEntity> findAll() {
         String sqlQuery = QueryType.SELECT_ALL_USERS.getQuery();
+        //TODO: в каждый метод вместо new UserRowMapper() передавать bean
         return jdbcTemplate.query(sqlQuery, new UserRowMapper());
     }
 
@@ -42,8 +41,10 @@ public class UserRepository {
         jdbcTemplate.queryForObject(sqlQuery, new UserRowMapper(), id);
     }
 
+    //TODO: вынести маппер отдельно, на уровне пакета com.example.demo.repository.mapper
     private static class UserRowMapper implements RowMapper<UserEntity> {
         @Override
+        //TODO: названия колонок вынести в enum, но не запросы
         public UserEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
             UserEntity user = new UserEntity();
             user.setId(rs.getInt("id"));

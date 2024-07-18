@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-
-//TODO: rename PositionEntity
 public class PositionEntity {
     private int id;
     private String name;
