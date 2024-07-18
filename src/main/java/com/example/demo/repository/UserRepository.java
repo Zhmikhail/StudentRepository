@@ -41,24 +41,6 @@ public class UserRepository {
         jdbcTemplate.queryForObject(sqlQuery, new UserRowMapper(), id);
     }
 
-    //TODO: вынести маппер отдельно, на уровне пакета com.example.demo.repository.mapper
-    private static class UserRowMapper implements RowMapper<UserEntity> {
-        @Override
-        //TODO: названия колонок вынести в enum, но не запросы
-        public UserEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
-            UserEntity user = new UserEntity();
-            user.setId(rs.getInt("id"));
-            user.setFirstName(rs.getString("first_name"));
-            user.setLastName(rs.getString("last_name"));
-            user.setBirthDate(rs.getDate("birth_date"));
-            user.setPositionId(rs.getInt("position_id"));
-            user.setPosition(rs.getString("name"));
-            user.setSalary(rs.getDouble("salary"));
-            user.setHireDate(rs.getDate("hire_date"));
-            user.setFireDate(rs.getDate("fire_date"));
-            return user;
-        }
-    }
     public enum QueryType {
         SELECT_ALL_USERS("SELECT * FROM Users u JOIN position p ON p.id = u.position_id"),
         SELECT_USER("SELECT * FROM Users u JOIN position p on p.id = u.position_id WHERE u.id = ?"),
