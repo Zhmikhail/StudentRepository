@@ -22,24 +22,9 @@ public class UserRowMapper implements RowMapper<UserEntity> {
         return user;
     }
 
-    public interface RowMapperBean<T> {
-        T mapRow(ResultSet rs, int rowNum) throws SQLException;
-    }
-
-    public interface EntityRowMapper<T> extends RowMapper<T> {
-        T mapRow(ResultSet rs, int rowNum);
-    }
 
     public enum TableFields {
-        ID("id"),
-        FIRST_NAME("first_name"),
-        LAST_NAME("last_name"),
-        BIRTH_DATE("birth_date"),
-        POSITION_ID("position_id"),
-        NAME("name"),
-        SALARY("salary"),
-        HIRE_DATE("hire_date"),
-        FIRE_DATE("fire_date");
+        ID("id"), FIRST_NAME("first_name"), LAST_NAME("last_name"), BIRTH_DATE("birth_date"), POSITION_ID("position_id"), NAME("name"), SALARY("salary"), HIRE_DATE("hire_date"), FIRE_DATE("fire_date");
 
         private final String field;
 

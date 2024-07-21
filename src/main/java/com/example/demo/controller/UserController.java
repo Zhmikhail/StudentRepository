@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    String regex = "[А-Яа-яA-Za-z]+";
+    String regex = "[А-Яа-яA-Za-z/-]+";
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 

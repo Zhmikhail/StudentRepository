@@ -49,9 +49,13 @@ public class UserDto {
         return positionId;
     }
 
-    public String getPosition() {return position;}
+    public String getPosition() {
+        return position;
+    }
 
-    public void setPosition(String position) {this.position = position;}
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
     public void setPositionId(int positionId) {
         this.positionId = positionId;

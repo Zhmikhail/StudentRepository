@@ -1,10 +1,11 @@
 package com.example.demo.service;
+
 import org.springframework.stereotype.Service;
 import com.example.demo.dto.UserDto;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
-import org.springframework.context.annotation.ComponentScan;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,9 +20,7 @@ public class UserService {
     }
 
     public List<UserDto> getAllUsers() {
-        return userRepository.findAll().stream()
-                .map(userMapper::toDto)
-                .collect(Collectors.toList());
+        return userRepository.findAll().stream().map(userMapper::toDto).collect(Collectors.toList());
     }
 
     public UserDto getUserById(int id) {

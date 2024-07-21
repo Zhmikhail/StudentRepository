@@ -49,9 +49,13 @@ public class UserEntity {
         return positionId;
     }
 
-    public void setPositionId(int positionId) {this.positionId = positionId;}
+    public void setPositionId(int positionId) {
+        this.positionId = positionId;
+    }
 
-    public void setPosition(String position) {this.position = position;}
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
     public String getPosition() {
         return position;
