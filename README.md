@@ -3,8 +3,11 @@
 ## Как собрать проект?
 
 Скачать, зайти в папку проекта в терминале и запустить команды:
-docker-compose up -d
-./build_and_run.sh 
+    
+    docker-compose up -d
+и 
+
+    ./build_and_run.sh 
 
 ## Что умеет?
 
