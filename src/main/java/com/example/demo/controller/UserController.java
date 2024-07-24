@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.utils.DateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.example.demo.dto.UserDto;
@@ -13,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    String regex = "[А-Яа-яA-Za-z/-]+";
+    private static final String regex = "[А-Яа-яA-Za-z/-]+";
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
 

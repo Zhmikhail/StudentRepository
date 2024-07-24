@@ -22,7 +22,7 @@
     curl -X GET http://localhost:8080/users/getUser/<id>
 Сохранение пользователя - addUser
 
-    curl -X PUT http://localhost:8080/users/addUser -H "Content-Type: application/json" -d '{
+    curl -X POST http://localhost:8080/users/addUser -H "Content-Type: application/json" -d '{
     "firstName": <firstName>,
     "lastName": <lastName>,
     "birthDate": <birthDate>,
@@ -34,7 +34,7 @@
 
 Обновление пользователя - updateUser
 
-    curl -X POST http://localhost:8080/users/updateUser/5 -H "Content-Type: application/json" -d '{
+    curl -X PUT http://localhost:8080/users/updateUser/5 -H "Content-Type: application/json" -d '{
     "firstName": <firstName>,
     "lastName": <lastName>,
     "birthDate": <birthDate>,
@@ -46,4 +46,4 @@
 
 Удаление пользователя - deleteUser
 
-    curl -X GET http://localhost:8080/users/deleteUser/2
+    curl -X DELETE http://localhost:8080/users/deleteUser/2

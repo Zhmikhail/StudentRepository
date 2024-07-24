@@ -13,6 +13,7 @@ public class UserMapper {
         dto.setFirstName(user.getFirstName());
         dto.setLastName(user.getLastName());
         dto.setBirthDate(user.getBirthDate());
+        dto.setPositionId(user.getPositionId());
         dto.setPosition(user.getPosition());
         dto.setSalary(user.getSalary());
         dto.setHireDate(user.getHireDate());

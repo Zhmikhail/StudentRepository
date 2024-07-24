@@ -1,6 +1,8 @@
 package com.example.demo.repository;
 
 import com.example.demo.entity.UserEntity;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -28,12 +30,27 @@ public class UserRepository {
 
     public void save(UserEntity user) {
         String sqlQuery = QueryType.SAVE_USER.getQuery();
-        jdbcTemplate.update(sqlQuery, user.getFirstName(), user.getLastName(), user.getBirthDate(), user.getPositionId(), user.getSalary(), user.getHireDate(), user.getFireDate());
+        jdbcTemplate.update(sqlQuery,
+                user.getFirstName(),
+                user.getLastName(),
+                user.getBirthDate(),
+                user.getPositionId(),
+                user.getSalary(),
+                user.getHireDate(),
+                user.getFireDate());
     }
 
     public void update(UserEntity user) {
         String sqlQuery = QueryType.UPDATE_USER.getQuery();
-        jdbcTemplate.update(sqlQuery, user.getFirstName(), user.getLastName(), user.getBirthDate(), user.getPositionId(), user.getSalary(), user.getHireDate(), user.getFireDate(), user.getId());
+        jdbcTemplate.update(sqlQuery,
+                user.getFirstName(),
+                user.getLastName(),
+                user.getBirthDate(),
+                user.getPositionId(),
+                user.getSalary(),
+                user.getHireDate(),
+                user.getFireDate(),
+                user.getId());
     }
 
     public void delete(int id) {
@@ -56,6 +73,15 @@ public class UserRepository {
 
         public String getQuery() {
             return query;
+        }
+    }
+
+    @Component
+    public static class AppConfig {
+
+        @Bean
+        public UserRowMapper userRowMapper() {
+            return new UserRowMapper();
         }
     }
 }
