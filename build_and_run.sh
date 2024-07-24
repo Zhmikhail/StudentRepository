@@ -2,12 +2,10 @@
 
 # Переменные
 JAR_NAME="empoyees-0.0.1-SNAPSHOT.jar"
-#PROJECT_PATH="/Users/zhmikhail/Desktop/work/java/bait/employees/employees"
 DOCKER_COMPOSE_PATH="docker-compose.yml"
 
 # Шаг 1: Сборка проекта и генерация JAR файла
 echo "Сборка проекта..."
-#cd $PROJECT_PATH
 ./mvnw clean package -DskipTests
 
 # Шаг 2: Проверка наличия JAR файла

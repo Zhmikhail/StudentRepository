@@ -21,7 +21,7 @@ doker-compose.yml
 mvnw
 mvnw.cmd
 /target
-.DS_Store
+*.DS_Store
 /.mvn
 
 ### NetBeans ###
