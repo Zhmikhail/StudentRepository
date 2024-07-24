@@ -2,16 +2,16 @@
 
 # Переменные
 JAR_NAME="empoyees-0.0.1-SNAPSHOT.jar"
-PROJECT_PATH="/Users/zhmikhail/Desktop/work/java/bait/employees/employees"
-DOCKER_COMPOSE_PATH="$PROJECT_PATH/docker-compose.yml"
+#PROJECT_PATH="/Users/zhmikhail/Desktop/work/java/bait/employees/employees"
+DOCKER_COMPOSE_PATH="docker-compose.yml"
 
 # Шаг 1: Сборка проекта и генерация JAR файла
 echo "Сборка проекта..."
-cd $PROJECT_PATH
+#cd $PROJECT_PATH
 ./mvnw clean package -DskipTests
 
 # Шаг 2: Проверка наличия JAR файла
-if [ ! -f "$PROJECT_PATH/target/$JAR_NAME" ]; then
+if [ ! -f "target/$JAR_NAME" ]; then
     echo "Ошибка: JAR файл не найден!"
     exit 1
 fi
@@ -32,7 +32,7 @@ echo "Docker контейнер успешно запущен."
 
 # Шаг 5: Запуск JAR файла
 echo "Запуск JAR файла..."
-java -jar $PROJECT_PATH/target/$JAR_NAME
+java -jar target/$JAR_NAME
 
 if [ $? -ne 0 ]; then
     echo "Ошибка: Не удалось запустить JAR файл!"
